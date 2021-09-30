@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Form</title>
+</head>
+<body>
+    
+
+    <form name="form1">
+        <fieldset>
+         <legend>ENTRY 1</legend>
+         <label for="fname">First name</label>
+         <input required type="text" id="fname" name="fname" placeholder="First Name"><br><br>
+         <label for="lname">Last name</label>
+         <input required type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+         <label for="address">Address</label>
+         <input required type="text" id="address" name="address" placeholder="Address"><br><br>
+         <label for="sex">Gender</label>
+         <select name="sex" id="sex" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        <label for="phone">Phone</label>
+         <input required type="tel" id="phone" name="phone" placeholder="phone"><br><br>
+        <label for="year">Year</label>
+        <select name="year" id="year" required>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2015">2013</option>
+            <option value="2014">2012</option>
+        </select>
+        <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>ENTRY 2</legend>
+            <input type="checkbox" name="copyForm" id="copyForm" onclick="fillForm(this.form)">
+            <label for="copyForm">Same as Entry1</label><br>
+            <label for="fname1">First name</label>
+            <input required type="text" id="fname1" name="fname1" placeholder="First Name"><br><br>
+            <label for="lname1">Last name</label>
+            <input required type="text" id="lname1" name="lname1" placeholder="Last Name"><br><br>
+            <label for="address1">Address</label>
+            <input required type="text" id="address1" name="address1" placeholder="Address"><br><br>
+            <label for="sex1">Gender</label>
+            <select name="sex1" id="sex1" required>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+           </select><br><br>
+           <label for="phone1">Phone</label>
+            <input required type="tel" id="phone1" name="phone1" placeholder="phone"><br><br>
+           <label for="year1">Year</label>
+           <select name="year1" id="year1" required>
+               <option value="2015">2015</option>
+               <option value="2014">2014</option>
+               <option value="2015">2013</option>
+               <option value="2014">2012</option>
+           </select>
+           <br><br>
+           <input type="submit" value="Submit">
+           </fieldset>
+    </form>
+    <div class="part2">
+        <form name="form" id="form">
+            <div>
+                <h1>Billing Address</h1>
+            <table>
+                <tr>
+                    <td><label for="bFname">First Name </label></td>
+                    <td><input type="text" name="bFname" id="bFname" placeholder="First Name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="bLname">Last Name</label></td>
+                    <td>
+                      <input type="text" name="bLname" id="bLname" placeholder="Last Name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="bAddress">Street Address</label></td>
+                    <td>
+                      <input type="text" name="bAddress" id="bAddress" placeholder="Address" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="bCity">City</label></td>
+                    <td>
+                      <input type="text" name="bCity" id="bCity"placeholder="City" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="bProvince">State</label></td>
+                    <td>
+                        <select name="bProvince" id="bProvince" required>
+                            <option value="">Select Province</option>
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland and Labrador</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="YT">Yukon</option>
+                    </td>
+                    <td><span id="bProvinceWarning"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="bZip">Zip</label></td>
+                    <td>
+                        <input id="bZip" name="bZip" type="text" placeholder="Zip"required >
+                    </td>
+                    <td><span  id="bZipWarning"></span></td>
+                </tr>
+                <tr>
+                    <td> <label for="bPhone">Phone number:</label></td>
+                    <td>
+                        <input type="text" id="bPhone" name="bPhone" placeholder="Phone" required>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            
+    
+            <!-- CHECK TABLE -->
+            <div>
+                <h1>Delivery Address</h1>
+            <table>
+                <tr>
+                    <input type="checkbox" name="copyForm" id="copyForm" onclick="fillBilling(this.form)">
+                    <label for="copyForm">Same as Billing Address</label>
+                </tr>
+                <tr>
+                    <td><label for="cFname">First Name</label></td>
+                    <td><input type="text" name="cFname" id="cFname" placeholder="First Name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="cLname">Last Name</label></td>
+                    <td>
+                      <input type="text" name="cLname" id="cLname" placeholder="Last Name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="cAddress">Street Address</label></td>
+                    <td>
+                      <input type="text" name="cAddress" id="cAddress" placeholder="Address" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="cCity">City</label></td>
+                    <td>
+                      <input type="text" name="cCity" id="cCity"placeholder="City" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="cProvince">State</label></td>
+                    <td>
+                        <select name="cProvince" id="cProvince" required>
+                            <option value="">Select Province</option>
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland and Labrador</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="YT">Yukon</option>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="cZip">Zip</label></td>
+                    <td>
+                        <input id="cZip" name="cZip" type="text" placeholder="Zip" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for="cPhone">Phone number:</label></td>
+                    <td>
+                        <input type="text" id="cPhone" name="cPhone" placeholder="Phone" required>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            
+            <tr><td><input type="submit" value="Submit" name="submitBtn" id="submit" required></td></tr>
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
